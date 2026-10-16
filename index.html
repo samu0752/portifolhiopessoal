@@ -1,81 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Página Pessoal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 40px;
-        }
-
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        img {
-            width: 150px;
-            border-radius: 50%;
-        }
-
-        h1, h2 {
-            color: #333;
-        }
-
-        ul {
-            margin-left: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samuel Xavier Sampaio — estudante de Análise e Desenvolvimento de Sistemas, em busca de estágio em TI, suporte técnico e desenvolvimento de sistemas.">
+  <meta name="theme-color" content="#171717">
+  <title>Samuel Sampaio | Estágio em TI</title>
+  <style>
+    :root{--paper:#faf9f6;--ink:#171717;--muted:#626262;--line:#deddd9;--accent:#f1f0ec;--white:#fff;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}a{color:inherit}a:focus-visible{outline:3px solid #777777;outline-offset:6px}::selection{background:var(--accent);color:var(--ink)}
+    .wrap{max-width:1180px;margin:auto;padding-inline:44px}.skip{position:fixed;top:-70px;left:16px;background:var(--ink);color:white;padding:10px 16px;z-index:5}.skip:focus{top:10px}
+    header{border-bottom:1px solid var(--line)}.nav{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-weight:700;font-size:18px;letter-spacing:-.5px}.brand span{font-weight:400;color:var(--muted)}nav{display:flex;gap:28px;align-items:center}nav a{text-decoration:none;font-size:13px;font-weight:600}nav a:hover{text-decoration:underline;text-underline-offset:5px}.nav-contact{border:1px solid #bdbbb5;padding:9px 17px;border-radius:30px}
+    .hero{padding-top:70px;padding-bottom:76px;display:grid;grid-template-columns:1fr;gap:0;align-items:center;max-width:1000px}.hero>div{max-width:760px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:10px}.dot{height:8px;width:8px;border-radius:50%;background:#444444;display:inline-block}.hero h1{font-family:var(--serif);font-size:clamp(48px,5.8vw,76px);font-weight:400;line-height:1.06;letter-spacing:-3px;margin:25px 0 22px}.hero h1 em{font-weight:400;color:#62605c}.intro{font-size:17px;color:var(--muted);max-width:620px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:49px;border-radius:5px;padding:12px 22px;text-decoration:none;font-size:13px;font-weight:700;background:var(--ink);color:var(--white);border:1px solid var(--ink);transition:background .2s}.button:hover{background:#363636}.button.secondary{background:transparent;color:var(--ink);border-color:#bcbab4}.button.secondary:hover{background:#eae9e4}.hero-meta{font-size:12px;color:var(--muted);margin-top:27px}
+    .summary{background:var(--ink);color:#f6f5f1}.summary-inner{padding-block:28px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:32px}.summary-item+.summary-item{border-left:1px solid #ffffff25;padding-left:35px}.summary small{display:block;color:#bcbcbc;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}.summary strong{font-size:15px;font-weight:500}
+    section.content{padding-block:74px;border-bottom:1px solid var(--line)}.section-heading{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:34px}.section-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 10px}h2{font-family:var(--serif);font-size:38px;line-height:1.2;font-weight:400;letter-spacing:-1px;margin:0}h3{font-size:19px;font-weight:600;letter-spacing:-.4px;margin:0 0 10px}.section-heading>p{color:var(--muted);font-size:14px;max-width:440px;margin:0}.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.skill{border-top:2px solid var(--ink);padding-top:23px}.number{font-family:var(--serif);font-style:italic;font-size:19px;color:#8a8882;display:block;margin-bottom:22px}.skill p{font-size:14px;color:var(--muted);margin:0 0 18px}.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{font-size:11px;border:1px solid #d5d3cd;padding:4px 10px;border-radius:3px;line-height:1.6}
+    .education{display:grid;grid-template-columns:1fr 1fr;gap:60px}.degree{background:#eeede8;padding:31px;border-radius:5px}.degree .school{font-size:14px;margin:12px 0 25px;color:var(--muted)}.status{font-size:11px;font-weight:700;display:inline-flex;align-items:center;gap:8px}.course{padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid var(--line)}.course:last-child{margin:0;border:0;padding:0}.course strong{font-size:15px;font-weight:600}.course span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+    .experience{display:grid;grid-template-columns:.7fr 1.3fr;gap:65px}.experience .lead{color:var(--muted);font-size:14px;margin-top:23px}.job{position:relative;padding:0 0 32px 26px;border-left:1px solid #c8c6c0}.job:before{content:'';position:absolute;left:-5px;top:8px;width:9px;height:9px;background:#4f4e4b;border-radius:50%}.job:last-child{padding-bottom:0}.job .date{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.job h3{margin-bottom:0}.role{font-size:13px;color:var(--muted);margin:0 0 12px}.job ul{padding-left:17px;margin:0;color:var(--muted);font-size:13px}.job li{margin:5px 0}
+    .contact{margin-block:68px;background:var(--ink);color:#f8f7f4;border-radius:6px;padding:45px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.contact .section-tag{color:#c5c3bd}.contact h2{font-size:38px}.contact p{font-size:14px;color:#c9c7c2;margin-bottom:0;max-width:530px}.contact .button{background:var(--accent);border-color:var(--accent);color:var(--ink)}.contact .button:hover{background:#ffffff}.email{display:block;text-align:center;font-size:11px;margin-top:12px;color:#d1cfca;overflow-wrap:anywhere}footer{padding-block:23px 32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;font-size:11px;color:var(--muted)}footer a{text-underline-offset:3px}
+    @media(max-width:900px){.wrap{padding-inline:28px}.hero{padding-top:45px}.hero h1{font-size:57px}.summary-inner{gap:20px}.summary-item+.summary-item{padding-left:20px}.contact{padding:30px;grid-template-columns:1fr}.contact-actions{justify-self:start}.email{text-align:left}.experience{gap:35px}.education{gap:30px}}
+    @media(max-width:640px){.wrap{padding-inline:22px}.nav{min-height:76px;gap:12px}.brand{font-size:16px}.brand span{display:none}nav{gap:16px}nav a{font-size:11px}.nav-contact{padding:7px 12px}nav .desktop{display:none}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px;gap:0}.hero h1{font-size:40px;letter-spacing:-1.5px;margin-top:19px}.intro{font-size:15px}.hero-meta{margin-top:20px}.summary-inner{grid-template-columns:1fr;gap:16px;padding-block:25px}.summary-item+.summary-item{border-left:0;border-top:1px solid #ffffff25;padding-left:0;padding-top:15px}.summary strong{font-size:14px}section.content{padding-block:48px}.section-heading,.education,.experience{grid-template-columns:1fr;gap:23px}.section-heading{margin-bottom:28px}h2{font-size:33px}.skills{grid-template-columns:1fr;gap:28px}.skill{padding-top:17px}.number{margin-bottom:10px}.degree{padding:25px}.experience .lead{margin-top:14px}.contact{margin-block:40px;padding:27px 23px}.contact h2{font-size:33px}.contact .button{width:100%}.contact-actions{width:100%}.email{text-align:center}footer{flex-direction:column;gap:5px}.eyebrow{font-size:9px;letter-spacing:1.4px}}
+    @media(max-width:360px){.nav{gap:8px}.brand{font-size:14px}nav{gap:9px}nav a{font-size:10px}.nav-contact{padding:6px 9px}.hero h1{font-size:36px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
 </head>
 <body>
-
-<div class="container">
-
-    <h1>Minha Página Pessoal</h1>
-
-    <img src="imagens/carro.jfif" alt="Minha Foto">
-
-    <h2>Apresentação</h2>
-    <p>
-        Olá! Meu nome é João Silva. Sou uma pessoa dedicada, curiosa e sempre
-        em busca de aprender coisas novas. Tenho interesse na área de tecnologia
-        e desenvolvimento de software.
-    </p>
-
-    <h2>Qualidades</h2>
-    <ul>
-        <li>Organizado</li>
-        <li>Responsável</li>
-        <li>Trabalho em equipe</li>
-        <li>Facilidade em aprender</li>
-    </ul>
-
-    <h2>Objetivos Profissionais</h2>
-    <p>
-        Meu objetivo é crescer profissionalmente na área de tecnologia,
-        adquirindo experiência em desenvolvimento web e contribuindo
-        com soluções inovadoras.
-    </p>
-
-    <h2>Mini Currículo</h2>
-    <p><strong>Formação:</strong></p>
-    <ul>
-        <li>Ensino Médio Completo</li>
-        <li>Cursando Análise e Desenvolvimento de Sistemas</li>
-    </ul>
-
-    <p><strong>Experiências:</strong></p>
-    <ul>
-        <li>Projetos acadêmicos de programação</li>
-        <li>Criação de páginas web em HTML e CSS</li>
-    </ul>
-
-</div>
-
+  <a class="skip" href="#inicio">Pular para o conteúdo</a>
+  <header><div class="wrap nav"><a class="brand" href="#inicio">Samuel Sampaio<span> / TI</span></a><nav aria-label="Navegação principal"><a href="#conhecimentos">Conhecimentos</a><a class="desktop" href="#trajetoria">Trajetória</a><a class="nav-contact" href="#contato">Contato ↗</a></nav></div></header>
+  <main id="inicio">
+    <div class="wrap hero">
+      <div><div class="eyebrow"><span class="dot" aria-hidden="true"></span> Em busca de estágio em TI</div><h1>Olá, sou Samuel.<br>Tecnologia é meu<br><em>próximo passo.</em></h1><p class="intro">Sou Samuel Xavier Sampaio, estudante de Análise e Desenvolvimento de Sistemas. Quero aplicar meus conhecimentos em suporte técnico e desenvolvimento de sistemas, aprender com a equipe e contribuir no dia a dia.</p><div class="actions"><a class="button" href="mailto:samuel.sampaio752@gmail.com">Vamos conversar <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/samu0752" target="_blank" rel="noopener noreferrer">Meu GitHub <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://www.linkedin.com/in/samuel-sampaio-169a08271/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a class="button secondary" href="curriculo-samuel-sampaio-publico.pdf" target="_blank" rel="noopener noreferrer">Currículo PDF <span aria-hidden="true">↗</span></a></div><p class="hero-meta">Diadema, SP · Interesse em suporte e desenvolvimento</p></div>
+    </div>
+    <div class="summary"><div class="wrap summary-inner"><div class="summary-item"><small>Formação em andamento</small><strong>Análise e Desenvolvimento de Sistemas</strong></div><div class="summary-item"><small>Instituição</small><strong>Anhanguera · conclusão prevista em 2028</strong></div><div class="summary-item"><small>Aprendendo agora</small><strong>Suporte de TI · Google</strong></div></div></div>
+    <section class="wrap content" id="conhecimentos" aria-labelledby="skills-title"><div class="section-heading"><div><p class="section-tag">01 / Conhecimentos</p><h2 id="skills-title">Uma base para construir.</h2></div><p>Conhecimentos adquiridos nos estudos e na prática, com interesse em entender tanto o software quanto a infraestrutura que o sustenta.</p></div><div class="skills"><article class="skill"><span class="number" aria-hidden="true">01</span><h3>Desenvolvimento</h3><p>Experiência com HTML e CSS, além de conhecimentos intermediários em Python, Java e lógica de programação.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Lógica de programação</span></div></article><article class="skill"><span class="number" aria-hidden="true">02</span><h3>Fundamentos de TI</h3><p>Estudos em redes, arquitetura de computadores, bancos de dados e análise de dados. Formação em suporte de TI em andamento pelo Google.</p><div class="tags"><span class="tag">Redes de computadores</span><span class="tag">Arquitetura de computadores</span><span class="tag">Banco de dados · fundamentos</span><span class="tag">Análise de dados · fundamentos</span><span class="tag">Suporte de TI em formação</span></div></article><article class="skill"><span class="number" aria-hidden="true">03</span><h3>Ferramentas e rotina</h3><p>Conhecimentos em Pacote Office e experiência profissional com atualização de sistemas internos, conferência de informações e organização de documentos.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Word</span><span class="tag">PowerPoint</span><span class="tag">Outlook</span><span class="tag">Sistemas internos</span></div></article></div></section>
+    <section class="wrap content" id="formacao" aria-labelledby="education-title"><div class="section-heading"><div><p class="section-tag">02 / Formação</p><h2 id="education-title">Aprender faz parte do caminho.</h2></div></div><div class="education"><article class="degree"><p class="section-tag">Graduação · Tecnólogo</p><h3>Análise e Desenvolvimento<br>de Sistemas</h3><p class="school">Anhanguera<br>Conclusão prevista: 2028</p><span class="status"><span class="dot" aria-hidden="true"></span> Cursando</span></article><div><div class="course"><strong>Suporte de TI</strong><span>Google · Em andamento</span></div><div class="course"><strong>Informática</strong><span>Chroma Tecnologia · Duração de 18 meses</span></div><div class="course"><strong>Administração</strong><span>Chroma Tecnologia · Duração de 18 meses</span></div><div class="course"><strong>Inglês</strong><span>Nível intermediário</span></div></div></div></section>
+    <section class="wrap content experience" id="trajetoria" aria-labelledby="experience-title"><div><p class="section-tag">03 / Experiência profissional</p><h2 id="experience-title">Organização e atenção<br>na prática.</h2><p class="lead">Minha trajetória em expedição inclui conferência de materiais, atualização de sistemas e controle de documentos. Trago essa vivência para meu próximo passo em TI.</p></div><div><article class="job"><div class="date">Junho de 2026 — Setembro de 2026</div><h3>Makita do Brasil</h3><p class="role">Auxiliar de Expedição</p><ul><li>Separação de máquinas e acessórios para expedição.</li><li>Embalagem e conferência de materiais.</li></ul></article><article class="job"><div class="date">Novembro de 2024 — Janeiro de 2026</div><h3>Usimatic</h3><p class="role">Auxiliar de Expedição</p><ul><li>Atualização de informações em sistemas internos.</li><li>Controle de entrada e saída de produtos e conferência de materiais.</li><li>Emissão e organização de documentos de envio de mercadorias.</li><li>Organização e identificação de materiais para controle do estoque.</li></ul></article></div></section>
+    <div class="wrap"><section class="contact" id="contato" aria-labelledby="contact-title"><div><p class="section-tag">04 / Próxima oportunidade</p><h2 id="contact-title">Vamos conversar?</h2><p>Busco um estágio em TI para desenvolver minhas habilidades em suporte técnico e desenvolvimento de sistemas. Entre em contato para conhecer melhor meu perfil.</p></div><div class="contact-actions"><a class="button" href="mailto:samuel.sampaio752@gmail.com">Entrar em contato <span aria-hidden="true">↗</span></a><a class="email" href="mailto:samuel.sampaio752@gmail.com">samuel.sampaio752@gmail.com</a></div></section><footer><span>Samuel Xavier Sampaio · Diadema, SP</span><span><a href="https://github.com/samu0752" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/samuel-sampaio-169a08271/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="curriculo-samuel-sampaio-publico.pdf">Currículo PDF</a></span></footer></div>
+  </main>
 </body>
 </html>
